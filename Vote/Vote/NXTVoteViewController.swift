@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class NXTVoteViewController: NXTPulseBaseViewController {
 
@@ -66,6 +67,10 @@ class NXTVoteViewController: NXTPulseBaseViewController {
     
     
     @IBAction func submitButtonClicked(_ sender: Any) {
+        if self.goldMedalIndex == -1 || self.silverMedalIndex == -1 || self.bronzeMedalIndex == -1 {
+            self.showAlert(title: "Hi", message: "Please choose project for all 3 positions")
+            return
+        }
         self.thankYouContainerView.isHidden = false
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
             self.thankYouContainerView.layer.transform = CATransform3DMakeScale(2, 2, 2)
@@ -155,15 +160,18 @@ extension NXTVoteViewController : UITableViewDataSource {
         cell.titleLabel.text = projectDetail.name
         cell.descriptionLabel.text = projectDetail.description
         if let url = projectDetail.logo {
-            cell.logoImageView?.downloaded(from: url, contentMode: .scaleAspectFit, completionHandler: { (isDownlaoded) in
-            })
+            let imageUrl = URL(string: url)
+            cell.logoImageView.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "imagePlaceholder"), options: [.progressiveDownload]) { (image, error, imageCacheType, imageUrl) in
+                // Perform your operations here.
+                cell.logoImageView.contentMode = .scaleAspectFit
+            }
         }
         if self.goldMedalIndex == indexPath.row {
-            cell.containerView.backgroundColor = UIColor.yellow
+            cell.containerView.backgroundColor = UIColor.init(hex: 0xE2B503)
         }else if self.silverMedalIndex == indexPath.row {
-            cell.containerView.backgroundColor = UIColor.lightGray
+            cell.containerView.backgroundColor = UIColor.init(hex: 0xD2DCE6)
         }else if self.bronzeMedalIndex == indexPath.row {
-            cell.containerView.backgroundColor = UIColor.brown
+            cell.containerView.backgroundColor = UIColor.init(hex: 0xC87445)
         }else {
             cell.containerView.backgroundColor = UIColor.clear
         }
