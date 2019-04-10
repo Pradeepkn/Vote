@@ -216,6 +216,14 @@
                                     <action selector="enterButtonClicked:" destination="CvC-WN-0Xh" eventType="touchUpInside" id="Xmi-Rz-6A1"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhI-NH-wd3">
+                                <rect key="frame" x="30" y="20" width="708" height="224"/>
+                                <string key="text">Project FAIR
+VOTING BOOTH</string>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.96862655880000004" green="0.96475034950000005" blue="0.96454447509999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -223,10 +231,14 @@
                             <constraint firstItem="OLl-mm-gzn" firstAttribute="bottom" secondItem="7AJ-YI-b4G" secondAttribute="bottom" constant="60" id="76I-1G-Cfm"/>
                             <constraint firstItem="OLl-mm-gzn" firstAttribute="bottom" secondItem="tau-fw-g7E" secondAttribute="bottom" constant="60" id="BAx-L1-qoV"/>
                             <constraint firstItem="7AJ-YI-b4G" firstAttribute="centerX" secondItem="lZ6-AF-gPe" secondAttribute="centerX" constant="-80" id="FTR-Sg-cLc"/>
+                            <constraint firstItem="lhI-NH-wd3" firstAttribute="top" secondItem="OLl-mm-gzn" secondAttribute="top" id="KOz-Wl-eqe"/>
                             <constraint firstItem="lZ6-AF-gPe" firstAttribute="centerY" secondItem="OLl-mm-gzn" secondAttribute="centerY" constant="30" id="Ngp-7R-GPy"/>
+                            <constraint firstItem="lhI-NH-wd3" firstAttribute="leading" secondItem="OLl-mm-gzn" secondAttribute="leading" constant="30" id="Oz9-TK-Z4Q"/>
                             <constraint firstItem="tau-fw-g7E" firstAttribute="centerX" secondItem="OLl-mm-gzn" secondAttribute="centerX" constant="80" id="WT9-Po-ZxX"/>
                             <constraint firstItem="aaa-51-GSk" firstAttribute="leading" secondItem="OLl-mm-gzn" secondAttribute="leading" constant="30" id="hyH-ti-Jl9"/>
+                            <constraint firstItem="aaa-51-GSk" firstAttribute="top" secondItem="lhI-NH-wd3" secondAttribute="bottom" constant="8" id="k26-4f-UZM"/>
                             <constraint firstItem="OLl-mm-gzn" firstAttribute="trailing" secondItem="aaa-51-GSk" secondAttribute="trailing" constant="30" id="lnz-Y3-ZFm"/>
+                            <constraint firstItem="OLl-mm-gzn" firstAttribute="trailing" secondItem="lhI-NH-wd3" secondAttribute="trailing" constant="30" id="vC0-EY-m74"/>
                             <constraint firstItem="lZ6-AF-gPe" firstAttribute="top" secondItem="aaa-51-GSk" secondAttribute="bottom" constant="30" id="xRO-EC-qaK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OLl-mm-gzn"/>
@@ -245,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bK2-0C-FvM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1669.5999999999999" y="160.56971514242881"/>
+            <point key="canvasLocation" x="1669.53125" y="160.546875"/>
         </scene>
         <!--Vote View Controller-->
         <scene sceneID="cxA-CB-Q8S">
