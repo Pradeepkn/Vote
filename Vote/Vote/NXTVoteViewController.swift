@@ -8,9 +8,10 @@
 
 import UIKit
 import SDWebImage
+import FirebaseAnalytics
 
 class NXTVoteViewController: NXTPulseBaseViewController {
-
+    
     @IBOutlet weak var topContainerView: UIView!
     @IBOutlet weak var projectListTableView: UITableView!
     
@@ -19,6 +20,7 @@ class NXTVoteViewController: NXTPulseBaseViewController {
     @IBOutlet weak var bronzeMedal: UIButton!
     @IBOutlet weak var thankYouLabel: UILabel!
     @IBOutlet weak var thankYouContainerView: UIView!
+    var employeId : String?
     
     var selectedButton : UIButton?
     var projectsList : [ProjectDetails]?
@@ -30,15 +32,18 @@ class NXTVoteViewController: NXTPulseBaseViewController {
     var isGoldEntry = true
     var isSilverEntry = false
     var isBronzeEntry = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.goldMedal.imageView!.contentMode = .scaleAspectFit
         self.silverMedal.imageView!.contentMode = .scaleAspectFit
         self.bronzeMedal.imageView!.contentMode = .scaleAspectFit
         self.goldMedal.alpha = 1.0
-        self.silverMedal.alpha = 0.5
-        self.bronzeMedal.alpha = 0.5
+        self.silverMedal.alpha = 0.3
+        self.bronzeMedal.alpha = 0.3
+        self.selectedButton = self.goldMedal
+        self.selectedButton!.layer.transform = CATransform3DMakeScale(1.3, 1.3, 1.3)
         NXTVoteConfigurationHelper.getProjectLists { (votingProjectsDetails) in
             self.projectsList = votingProjectsDetails!.responseData?.projects
             self.projectListTableView.reloadData()
@@ -57,12 +62,14 @@ class NXTVoteViewController: NXTPulseBaseViewController {
             self.isBronzeEntry = true
         }
         if self.selectedButton != nil {
-            self.selectedButton!.alpha = 0.5
+            self.selectedButton!.alpha = 0.3
+            self.selectedButton!.layer.transform = CATransform3DMakeScale(1, 1, 1)
         }else {
-            self.goldMedal.alpha = 0.5
+            self.goldMedal.alpha = 0.3
         }
         self.selectedButton = sender
         self.selectedButton!.alpha = 1.0
+        self.selectedButton!.layer.transform = CATransform3DMakeScale(1.3, 1.3, 1.3)
     }
     
     
@@ -79,6 +86,13 @@ class NXTVoteViewController: NXTPulseBaseViewController {
                 self.navigationController?.popViewController(animated: true)
             }
         }
+        let goldProjectName = self.projectsList![self.goldMedalIndex].name
+        let silverProjectName = self.projectsList![self.silverMedalIndex].name
+        let bronzeProjectName = self.projectsList![self.bronzeMedalIndex].name
+
+        Analytics.logEvent("Gold" , parameters: [ "Employe_ID" : self.employeId!, "Project_Name" : goldProjectName!])
+        Analytics.logEvent("Silver" , parameters: [ "Employe_ID" : self.employeId!, "Project_Name" : silverProjectName!])
+        Analytics.logEvent("Bronze" , parameters: [ "Employe_ID" : self.employeId!, "Project_Name" : bronzeProjectName!])
     }
     
     /*
@@ -96,7 +110,11 @@ class NXTVoteViewController: NXTPulseBaseViewController {
 
 extension NXTVoteViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
+        return 180
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
