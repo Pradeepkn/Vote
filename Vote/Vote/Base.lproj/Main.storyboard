@@ -44,11 +44,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="708" height="90"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your 'Employe id'" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2w-wR-4zU">
-                                                <rect key="frame" x="0.0" y="10" width="708" height="30"/>
+                                                <rect key="frame" x="0.0" y="9.5" width="708" height="30.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="zMQ-sc-S1d"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -57,21 +57,21 @@
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8L-JE-DAx">
                                                         <rect key="frame" x="4" y="0.0" width="50" height="50"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="24"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="24"/>
                                                         <state key="normal">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgD-Pt-5el">
                                                         <rect key="frame" x="58" y="0.0" width="50" height="50"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="24"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="24"/>
                                                         <state key="normal">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ss4-nj-2EH">
                                                         <rect key="frame" x="112" y="0.0" width="50" height="50"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="24"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="24"/>
                                                         <state key="normal">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
@@ -220,7 +220,7 @@
                                 <rect key="frame" x="30" y="20" width="708" height="224"/>
                                 <string key="text">Project FAIR
 VOTING BOOTH</string>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -268,17 +268,17 @@ VOTING BOOTH</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VcQ-BW-UV9">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="300"/>
                                 <subviews>
                                     <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNy-bE-J3l">
-                                        <rect key="frame" x="40" y="50" width="202.5" height="100"/>
+                                        <rect key="frame" x="40" y="130" width="202.5" height="100"/>
                                         <state key="normal" image="best"/>
                                         <connections>
                                             <action selector="medalButtonClicked:" destination="AFU-4Y-DFL" eventType="touchUpInside" id="Xav-R0-AAi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xk-dA-R5U">
-                                        <rect key="frame" x="282.5" y="50" width="203" height="100"/>
+                                        <rect key="frame" x="282.5" y="130" width="203" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="NGF-sf-52m"/>
                                         </constraints>
@@ -288,14 +288,14 @@ VOTING BOOTH</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAr-6f-aPW">
-                                        <rect key="frame" x="525.5" y="50" width="202.5" height="100"/>
+                                        <rect key="frame" x="525.5" y="130" width="202.5" height="100"/>
                                         <state key="normal" image="third"/>
                                         <connections>
                                             <action selector="medalButtonClicked:" destination="AFU-4Y-DFL" eventType="touchUpInside" id="8Pz-Zg-pGJ"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l3m-PC-wB7" customClass="CHIPageControlJalapeno" customModule="CHIPageControl">
-                                        <rect key="frame" x="264" y="168" width="240" height="32"/>
+                                        <rect key="frame" x="264" y="268" width="240" height="32"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.84523607359999997" green="0.042394307319999998" blue="0.317459355" alpha="0.8966449058" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -326,28 +326,40 @@ VOTING BOOTH</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your choice of VOTING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWW-5Q-dSi">
+                                        <rect key="frame" x="20" y="20" width="728" height="90"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="26"/>
+                                        <color key="textColor" red="0.1549606489672041" green="0.15834309340331415" blue="0.28121034263959388" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.48709720119408945" green="0.49323821122178774" blue="0.87384993654822329" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="8Xk-dA-R5U" firstAttribute="top" secondItem="hWW-5Q-dSi" secondAttribute="bottom" constant="20" id="2Zm-WW-Tn7"/>
                                     <constraint firstItem="8Xk-dA-R5U" firstAttribute="width" secondItem="SNy-bE-J3l" secondAttribute="width" id="3Qz-YS-G83"/>
                                     <constraint firstItem="SNy-bE-J3l" firstAttribute="leading" secondItem="VcQ-BW-UV9" secondAttribute="leading" constant="40" id="7D7-vO-o0B"/>
+                                    <constraint firstAttribute="trailing" secondItem="hWW-5Q-dSi" secondAttribute="trailing" constant="20" id="8Pv-9H-DJZ"/>
                                     <constraint firstItem="yAr-6f-aPW" firstAttribute="leading" secondItem="8Xk-dA-R5U" secondAttribute="trailing" constant="40" id="9U2-0M-9qN"/>
                                     <constraint firstAttribute="trailing" secondItem="yAr-6f-aPW" secondAttribute="trailing" constant="40" id="Jyg-eR-ZmU"/>
+                                    <constraint firstItem="hWW-5Q-dSi" firstAttribute="leading" secondItem="VcQ-BW-UV9" secondAttribute="leading" constant="20" id="N1N-mA-Xv9"/>
                                     <constraint firstItem="8Xk-dA-R5U" firstAttribute="height" secondItem="SNy-bE-J3l" secondAttribute="height" id="Qq4-7z-b19"/>
                                     <constraint firstItem="8Xk-dA-R5U" firstAttribute="centerX" secondItem="VcQ-BW-UV9" secondAttribute="centerX" id="VZH-8O-OIQ"/>
-                                    <constraint firstItem="8Xk-dA-R5U" firstAttribute="centerY" secondItem="VcQ-BW-UV9" secondAttribute="centerY" id="c83-Cr-PDq"/>
-                                    <constraint firstItem="SNy-bE-J3l" firstAttribute="centerY" secondItem="VcQ-BW-UV9" secondAttribute="centerY" id="dHq-Lt-ckB"/>
+                                    <constraint firstItem="8Xk-dA-R5U" firstAttribute="centerY" secondItem="VcQ-BW-UV9" secondAttribute="centerY" constant="30" id="c83-Cr-PDq"/>
+                                    <constraint firstItem="SNy-bE-J3l" firstAttribute="centerY" secondItem="VcQ-BW-UV9" secondAttribute="centerY" constant="30" id="dHq-Lt-ckB"/>
                                     <constraint firstItem="8Xk-dA-R5U" firstAttribute="leading" secondItem="SNy-bE-J3l" secondAttribute="trailing" constant="40" id="i68-Ct-l9f"/>
+                                    <constraint firstItem="hWW-5Q-dSi" firstAttribute="centerX" secondItem="VcQ-BW-UV9" secondAttribute="centerX" id="iR5-N4-kRd"/>
                                     <constraint firstAttribute="bottom" secondItem="l3m-PC-wB7" secondAttribute="bottom" id="ia5-zF-mOx"/>
                                     <constraint firstItem="yAr-6f-aPW" firstAttribute="height" secondItem="SNy-bE-J3l" secondAttribute="height" id="k2g-Dy-fVM"/>
-                                    <constraint firstItem="yAr-6f-aPW" firstAttribute="centerY" secondItem="VcQ-BW-UV9" secondAttribute="centerY" id="kme-6X-nQn"/>
+                                    <constraint firstItem="yAr-6f-aPW" firstAttribute="centerY" secondItem="VcQ-BW-UV9" secondAttribute="centerY" constant="30" id="kme-6X-nQn"/>
                                     <constraint firstItem="l3m-PC-wB7" firstAttribute="centerX" secondItem="VcQ-BW-UV9" secondAttribute="centerX" id="rfQ-e1-o2c"/>
                                     <constraint firstItem="yAr-6f-aPW" firstAttribute="width" secondItem="SNy-bE-J3l" secondAttribute="width" id="s0L-CW-7sO"/>
-                                    <constraint firstAttribute="height" constant="200" id="va8-Ue-jZp"/>
+                                    <constraint firstAttribute="height" constant="300" id="va8-Ue-jZp"/>
+                                    <constraint firstItem="hWW-5Q-dSi" firstAttribute="top" secondItem="VcQ-BW-UV9" secondAttribute="top" constant="20" id="x8P-2S-3Sc"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qQq-ha-clA">
-                                <rect key="frame" x="0.0" y="200" width="768" height="824"/>
+                                <rect key="frame" x="0.0" y="300" width="768" height="724"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.58589249850000003" green="0.6532769799" blue="0.75309401750000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -380,7 +392,7 @@ VOTING BOOTH</string>
                                                         </textView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JdU-lw-pyG">
                                                             <rect key="frame" x="5" y="30" width="119.5" height="119.5"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.24775256849315069" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="tintColor" red="0.84523607359999997" green="0.042394307319999998" blue="0.317459355" alpha="0.8966449058" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="JdU-lw-pyG" secondAttribute="height" multiplier="1:1" id="BvJ-4A-zdM"/>

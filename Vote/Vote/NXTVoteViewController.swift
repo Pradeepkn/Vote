@@ -51,6 +51,7 @@ class NXTVoteViewController: NXTPulseBaseViewController {
         self.bronzeMedal.alpha = 0.3
         self.selectedButton = self.goldMedal
         self.selectedButton!.layer.transform = CATransform3DMakeScale(1.3, 1.3, 1.3)
+        self.pageControl.set(progress: 0, animated: true)
         NXTVoteConfigurationHelper.getProjectLists { (votingProjectsDetails) in
             self.projectsList = votingProjectsDetails!.responseData?.projects
             self.projectListTableView.reloadData()
@@ -59,7 +60,6 @@ class NXTVoteViewController: NXTPulseBaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.pageControl.set(progress: 0, animated: true)
     }
     
     @IBAction func medalButtonClicked(_ sender: UIButton) {
@@ -96,7 +96,7 @@ class NXTVoteViewController: NXTPulseBaseViewController {
         self.playSound()
         self.thankYouContainerView.isHidden = false
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
-            self.thankYouContainerView.layer.transform = CATransform3DMakeScale(2, 2, 2)
+            self.thankYouContainerView.layer.transform = CATransform3DMakeScale(1.5, 1.5, 1.5)
         }) { (onCompletion) in
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
                 self.navigationController?.popViewController(animated: true)
@@ -198,7 +198,7 @@ extension NXTVoteViewController : UITableViewDelegate {
         }else {
             self.submitButton.isHidden = true
         }
-        self.projectListTableView.reloadRows(at: tableView.indexPathsForVisibleRows!, with: .fade)
+        self.projectListTableView.reloadData()
     }
 }
 
@@ -228,7 +228,9 @@ extension NXTVoteViewController : UITableViewDataSource {
         cell.titleLabel.text = projectDetail.name
         cell.descriptionLabel.text = projectDetail.description
         if let url = projectDetail.logo {
-            let imageUrl = URL(string: url)
+            let encodedUrl = String(url.utf8)
+            let imageUrl = URL(string: encodedUrl)
+            print(encodedUrl)
             cell.logoImageView.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "imagePlaceholder"), options: [.progressiveDownload]) { (image, error, imageCacheType, imageUrl) in
                 // Perform your operations here.
                 cell.logoImageView.contentMode = .scaleAspectFit
