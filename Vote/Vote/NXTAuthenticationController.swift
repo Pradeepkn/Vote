@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 10.0, *)
 class NXTAuthenticationController: NXTPulseBaseViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var infoLabel: UILabel!

@@ -31,6 +31,7 @@
 		272D32AB225DCAAC00603D70 /* TTNetwork.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 272D32A0225DCAAC00603D70 /* TTNetwork.xcdatamodeld */; };
 		272D32AD225DCAC700603D70 /* NXTVoteConfigurationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272D32AC225DCAC700603D70 /* NXTVoteConfigurationHelper.swift */; };
 		2744AC44225E229A00A6304C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2744AC43225E229900A6304C /* GoogleService-Info.plist */; };
+		27C05B2B225F1AB200A70F9C /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 27C05B2A225F1AB100A70F9C /* beep.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		272D32A1225DCAAC00603D70 /* TTNetwork.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TTNetwork.xcdatamodel; sourceTree = "<group>"; };
 		272D32AC225DCAC700603D70 /* NXTVoteConfigurationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NXTVoteConfigurationHelper.swift; sourceTree = "<group>"; };
 		2744AC43225E229900A6304C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		27C05B2A225F1AB100A70F9C /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 		2D684DCFD88C68DD9D9CFE97 /* Pods-Vote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vote.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vote/Pods-Vote.release.xcconfig"; sourceTree = "<group>"; };
 		7B29A0BEFBE5F5EC15B9A088 /* Pods-Vote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vote/Pods-Vote.debug.xcconfig"; sourceTree = "<group>"; };
 		8D540C20397901A5D76AC8B4 /* Pods_Vote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 				272D327F225DBBDA00603D70 /* LaunchScreen.storyboard */,
 				272D3282225DBBDA00603D70 /* Info.plist */,
 				2744AC43225E229900A6304C /* GoogleService-Info.plist */,
+				27C05B2A225F1AB100A70F9C /* beep.mp3 */,
 				272D327A225DBBD700603D70 /* Vote.xcdatamodeld */,
 			);
 			path = Vote;
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				272D3281225DBBDA00603D70 /* LaunchScreen.storyboard in Resources */,
+				27C05B2B225F1AB200A70F9C /* beep.mp3 in Resources */,
 				272D327E225DBBDA00603D70 /* Assets.xcassets in Resources */,
 				2744AC44225E229A00A6304C /* GoogleService-Info.plist in Resources */,
 				272D3279225DBBD700603D70 /* Main.storyboard in Resources */,
@@ -261,12 +265,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Vote/Pods-Vote-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CHIPageControl/CHIPageControl.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHIPageControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -451,7 +457,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LM46A95F35;
 				INFOPLIST_FILE = Vote/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -471,7 +477,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LM46A95F35;
 				INFOPLIST_FILE = Vote/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

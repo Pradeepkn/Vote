@@ -9,7 +9,10 @@
 import UIKit
 import SDWebImage
 import FirebaseAnalytics
+import AVFoundation
+import CHIPageControl
 
+@available(iOS 10.0, *)
 class NXTVoteViewController: NXTPulseBaseViewController {
     
     @IBOutlet weak var topContainerView: UIView!
@@ -20,6 +23,11 @@ class NXTVoteViewController: NXTPulseBaseViewController {
     @IBOutlet weak var bronzeMedal: UIButton!
     @IBOutlet weak var thankYouLabel: UILabel!
     @IBOutlet weak var thankYouContainerView: UIView!
+    
+    @IBOutlet weak var pageControl: CHIPageControlJalapeno!
+    @IBOutlet weak var submitButton: UIButton!
+    
+    var player: AVAudioPlayer?
     var employeId : String?
     
     var selectedButton : UIButton?
@@ -35,7 +43,6 @@ class NXTVoteViewController: NXTPulseBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.goldMedal.imageView!.contentMode = .scaleAspectFit
         self.silverMedal.imageView!.contentMode = .scaleAspectFit
         self.bronzeMedal.imageView!.contentMode = .scaleAspectFit
@@ -50,16 +57,24 @@ class NXTVoteViewController: NXTPulseBaseViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.pageControl.set(progress: 0, animated: true)
+    }
+    
     @IBAction func medalButtonClicked(_ sender: UIButton) {
         self.isGoldEntry = false
         self.isSilverEntry = false
         self.isBronzeEntry = false
         if sender.tag == 100 {
             self.isGoldEntry = true
+            self.pageControl.set(progress: 0, animated: true)
         }else if sender.tag == 200 {
             self.isSilverEntry = true
+            self.pageControl.set(progress: 1, animated: true)
         }else {
             self.isBronzeEntry = true
+            self.pageControl.set(progress: 2, animated: true)
         }
         if self.selectedButton != nil {
             self.selectedButton!.alpha = 0.3
@@ -78,6 +93,7 @@ class NXTVoteViewController: NXTPulseBaseViewController {
             self.showAlert(title: "Hi", message: "Please choose project for all 3 positions")
             return
         }
+        self.playSound()
         self.thankYouContainerView.isHidden = false
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
             self.thankYouContainerView.layer.transform = CATransform3DMakeScale(2, 2, 2)
@@ -95,6 +111,28 @@ class NXTVoteViewController: NXTPulseBaseViewController {
         Analytics.logEvent("Bronze" , parameters: [ "Employe_ID" : self.employeId!, "Project_Name" : bronzeProjectName!])
     }
     
+    func playSound() {
+        guard let url = Bundle.main.url(forResource: "beep", withExtension: "mp3") else {
+            print("url not found")
+            return
+        }
+        
+        do {
+            /// this codes for making this app ready to takeover the device audio
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            /// change fileTypeHint according to the type of your audio file (you can omit this)
+            
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            // no need for prepareToPlay because prepareToPlay is happen automatically when calling play()
+            player!.play()
+        } catch let error as NSError {
+            print("error: \(error.localizedDescription)")
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -108,6 +146,7 @@ class NXTVoteViewController: NXTPulseBaseViewController {
 }
 
 
+@available(iOS 10.0, *)
 extension NXTVoteViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 180
@@ -154,10 +193,16 @@ extension NXTVoteViewController : UITableViewDelegate {
                 self.bronzeMedalIndex = indexPath.row
             }
         }
+        if self.goldMedalIndex >= 0 && self.silverMedalIndex >= 0 && self.bronzeMedalIndex >= 0 {
+            self.submitButton.isHidden = false
+        }else {
+            self.submitButton.isHidden = true
+        }
         self.projectListTableView.reloadRows(at: tableView.indexPathsForVisibleRows!, with: .fade)
     }
 }
 
+@available(iOS 10.0, *)
 extension NXTVoteViewController : UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -166,6 +211,11 @@ extension NXTVoteViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.projectsList != nil {
+            if self.goldMedalIndex >= 0 && self.silverMedalIndex >= 0 && self.bronzeMedalIndex >= 0 {
+                self.submitButton.isHidden = false
+            }else {
+                self.submitButton.isHidden = true
+            }
             return self.projectsList!.count
         }
         return 0
@@ -184,14 +234,23 @@ extension NXTVoteViewController : UITableViewDataSource {
                 cell.logoImageView.contentMode = .scaleAspectFit
             }
         }
+        cell.positionImageView.isHidden = true
         if self.goldMedalIndex == indexPath.row {
-            cell.containerView.backgroundColor = UIColor.init(hex: 0xE2B503)
+            cell.containerView.backgroundColor = UIColor.init(hex: 0xE2B503).withAlphaComponent(0.5)
+            cell.positionImageView.image = UIImage(named: "best")
+            cell.positionImageView.isHidden = false
         }else if self.silverMedalIndex == indexPath.row {
-            cell.containerView.backgroundColor = UIColor.init(hex: 0xD2DCE6)
+            cell.containerView.backgroundColor = UIColor.init(hex: 0xD2DCE6).withAlphaComponent(0.5)
+            cell.positionImageView.image = UIImage(named: "second")
+            cell.positionImageView.isHidden = false
         }else if self.bronzeMedalIndex == indexPath.row {
-            cell.containerView.backgroundColor = UIColor.init(hex: 0xC87445)
+            cell.containerView.backgroundColor = UIColor.init(hex: 0xC87445).withAlphaComponent(0.5)
+            cell.positionImageView.image = UIImage(named: "third")
+            cell.positionImageView.isHidden = false
         }else {
             cell.containerView.backgroundColor = UIColor.clear
+            cell.positionImageView.image = UIImage(named: "")
+            cell.positionImageView.isHidden = true
         }
         return cell
     }

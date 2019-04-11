@@ -14,6 +14,7 @@ class NXTProjectCell: UITableViewCell {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UITextView!
+    @IBOutlet weak var positionImageView: UIImageView!
     
     
     override func awakeFromNib() {

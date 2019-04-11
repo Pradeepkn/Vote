@@ -28,6 +28,7 @@ enum UIUserInterfaceIdiom : Int {
     case pad // iPad style UI
 }
 
+@available(iOS 10.0, *)
 public class NXTPulseBaseViewController: UIViewController {
 
     override public func viewDidLoad() {

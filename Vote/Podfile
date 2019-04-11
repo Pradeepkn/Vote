@@ -3,4 +3,5 @@ use_frameworks!
 target ‘Vote’ do
     pod 'SDWebImage', '~> 4.0'
     pod 'Firebase/Core'
+    pod 'CHIPageControl/Jalapeno'
 end

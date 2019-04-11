@@ -1,4 +1,5 @@
 PODS:
+  - CHIPageControl/Jalapeno (0.1.7)
   - Firebase/Core (5.20.1):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 5.8.0)
@@ -54,11 +55,13 @@ PODS:
   - SDWebImage/Core (4.4.6)
 
 DEPENDENCIES:
+  - CHIPageControl/Jalapeno
   - Firebase/Core
   - SDWebImage (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - CHIPageControl
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -69,6 +72,7 @@ SPEC REPOS:
     - SDWebImage
 
 SPEC CHECKSUMS:
+  CHIPageControl: bbe1ddd0c688c02ec65b7f7e7d34551a3d16f37c
   Firebase: 2f5235e62f141cb86181c3af0dfe4509706351ac
   FirebaseAnalytics: fd72a26bf8dac84cefba2f0864366f718555a5b0
   FirebaseCore: f1a9a8be1aee4bf71a2fc0f4096df6788bdfda61
@@ -78,6 +82,6 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
 
-PODFILE CHECKSUM: e94c950e72f13443c9366ff22b8733dcd2a6c8bf
+PODFILE CHECKSUM: c5d888ee983f0531471c7249b0bf3b937ed793a4
 
 COCOAPODS: 1.5.3

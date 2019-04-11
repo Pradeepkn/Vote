@@ -10,6 +10,7 @@ import UIKit
 //import GoogleAPIClientForREST
 //import GoogleSignIn
 
+@available(iOS 10.0, *)
 class NXTSplashViewController: UIViewController/*, GIDSignInDelegate, GIDSignInUIDelegate*/ {
     // If modifying these scopes, delete your previously saved credentials by
     // resetting the iOS simulator or uninstall the app.
