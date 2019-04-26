@@ -106,9 +106,9 @@ class NXTVoteViewController: NXTPulseBaseViewController {
         let silverProjectName = self.projectsList![self.silverMedalIndex].name
         let bronzeProjectName = self.projectsList![self.bronzeMedalIndex].name
 
-        Analytics.logEvent("Gold" , parameters: [ "Employe_ID" : self.employeId!, "Project_Name" : goldProjectName!])
-        Analytics.logEvent("Silver" , parameters: [ "Employe_ID" : self.employeId!, "Project_Name" : silverProjectName!])
-        Analytics.logEvent("Bronze" , parameters: [ "Employe_ID" : self.employeId!, "Project_Name" : bronzeProjectName!])
+        Analytics.logEvent("\(goldProjectName!)_1" , parameters: [ "Employe_ID" : self.employeId!, "Project_Name" : goldProjectName!])
+        Analytics.logEvent("\(silverProjectName!)_2" , parameters: [ "Employe_ID" : self.employeId!, "Project_Name" : silverProjectName!])
+        Analytics.logEvent("\(bronzeProjectName!)_3" , parameters: [ "Employe_ID" : self.employeId!, "Project_Name" : bronzeProjectName!])
     }
     
     func playSound() {
@@ -226,7 +226,7 @@ extension NXTVoteViewController : UITableViewDataSource {
         cell.updateViewElements()
         let projectDetail = self.projectsList![indexPath.row]
         cell.titleLabel.text = projectDetail.name
-        cell.descriptionLabel.text = projectDetail.description
+        cell.detailsLabel!.text = projectDetail.description
         if let url = projectDetail.logo {
             let encodedUrl = String(url.utf8)
             let imageUrl = URL(string: encodedUrl)

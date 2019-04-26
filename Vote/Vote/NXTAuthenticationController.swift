@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 @available(iOS 10.0, *)
 class NXTAuthenticationController: NXTPulseBaseViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+
+//    var interstitial: GADInterstitial!
 
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var inputFiledContainerView: UIView!
@@ -34,6 +37,9 @@ class NXTAuthenticationController: NXTPulseBaseViewController, UICollectionViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        interstitial = GADInterstitial(adUnitID: "ca-app-pub-6135346118970528/2020460541")
+//        let request = GADRequest()
+//        interstitial.load(request)
         self.inField1.addBottomBorderWithColor(color: .gray, width: 1.0)
         self.inField2.addBottomBorderWithColor(color: .gray, width: 1.0)
         self.inField3.addBottomBorderWithColor(color: .gray, width: 1.0)
@@ -47,6 +53,9 @@ class NXTAuthenticationController: NXTPulseBaseViewController, UICollectionViewD
         super.viewWillAppear(animated)
         self.cencelButtonClicked(UIButton())
         self.isViewPushLocked = false
+//        if interstitial.isReady {
+//            interstitial.present(fromRootViewController: self)
+//        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

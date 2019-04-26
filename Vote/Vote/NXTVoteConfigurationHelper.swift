@@ -44,7 +44,7 @@ class NXTVoteConfigurationHelper: NSObject {
     static func getProjectLists(completionHandler:@escaping NXTVoteConfigurationHelper.ResponseHandler) {
         var configurationTask : URLSessionDataTask!
         configurationTask?.cancel()
-        let requestPath = "5caeefc8340000972fab6eea"
+        let requestPath = "5cc2c0d33300007c007e5414"
         
         let configurationResource = Resource<VotingProjectsResponse, CustomError>(jsonDecoder: JSONDecoder(), path: requestPath)
         

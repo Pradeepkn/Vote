@@ -13,7 +13,7 @@ class NXTProjectCell: UITableViewCell {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UITextView!
+    @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var positionImageView: UIImageView!
     
     
